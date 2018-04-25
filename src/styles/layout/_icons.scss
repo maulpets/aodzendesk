@@ -1,0 +1,16 @@
+.icon{
+  &.icon-video{
+    @include icon-bg(video);
+  }
+  &.icon-whitepaper{
+    @include icon-bg(whitepaper);
+  }
+  &.icon-research{
+    @include icon-bg(research);
+  }
+
+
+
+
+
+}

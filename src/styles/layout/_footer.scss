@@ -1,0 +1,90 @@
+
+/*-------------------
+       footer
+----------------*/
+
+%footer-block{
+  width: 100%;
+  list-style: none;
+  display: inline-flex;
+  margin: 5px auto;
+}
+
+footer{
+	display: block;
+	text-align: center;
+	padding: 3em 0;
+  background: white;
+/*footer logo link*/
+  .logo{
+  	width:75px;
+  	height: 50px;
+    background: url(../images/logos/AOD_Circles.svg);
+    background-repeat: no-repeat;
+    margin: auto;
+    display: block;
+  }
+
+/******link bar + company info footer *****/
+  .links{
+    @extend %footer-block;
+    li{
+      @extend %centerKids;
+        a{
+          display: block;
+      	  padding: 1em 2em;
+        	color:rgba(121,73,106,1.0);
+          @include eZe(all, 600ms);
+      	  opacity:1;
+        &:hover{
+          	opacity: .7;
+          }
+        }
+      }
+    }
+
+/*company info footer styling*/
+.foot{
+    @extend %footer-block;
+      li{
+          @extend %centerKids;
+        	padding: 0 10px;
+        	line-height: 1.2em;
+        	font-weight: 300;
+        }
+}
+
+
+/*-------------------
+address + phone number
+----------------*/
+#companyAddress:hover{
+	cursor: pointer;
+}
+#companyPhone:hover{
+	cursor: pointer;
+}
+
+
+
+@media screen and (max-width: 960px) {
+	/* address mobile reposnsiveness */
+	.foot{
+		flex-direction: column;
+	     li{
+      		margin: auto;
+      		padding: 0px;
+	        }
+      }
+}
+
+@media screen and (max-width: 600px) {
+	/*link into column*/
+	.links{
+		flex-flow: row wrap;
+    li {
+      margin: auto;
+    }
+  }
+}
+}

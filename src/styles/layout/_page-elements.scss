@@ -1,0 +1,88 @@
+.bullets{
+  li{
+    font-weight: 300;
+  	margin: .5em 0;
+  	display: flex;
+  	align-items: center;
+  	text-align: left;
+  	line-height: 1.2;
+
+    &:before{
+      font-family: 'Material Icons';
+      content: '\E315';
+      vertical-align: middle;
+      font-size: 1em;
+      display: inline-block;
+      margin-right: .5em;
+    }
+  }
+  &.checkmarks li:before{
+    content: '\E876' !important;
+  }
+
+}
+
+.icon-row{
+  display: flex;
+  justify-content: space-around;
+  flex-flow: row wrap;
+}
+.icon-col{
+  display: flex;
+  flex-flow: row wrap;
+}
+
+
+.iconLink{
+  @include eZe(all, 400ms);
+	padding: 10px 20px;
+  display: inline-flex;
+  align-items: center;
+	position: relative;
+
+  .icon{
+    @include setHW(50px,50px);
+  }
+
+  ul{
+    margin: 0 .5em;
+  	font-weight: 300;
+  	color: rgba(121,73,106,1.00);
+  	font-size: 1.2em;
+  	line-height: 1.1;
+  }
+  li:first-of-type{
+  	font-weight: 400;
+  }
+  &::after, &::before{
+    @include eZe(all, 400ms);
+    @include block-absolute(100%, 100%);
+    @include border-radius(2px);
+    content: " ";
+    z-index: -1;
+    opacity: 0;
+  }
+ &::after{
+    bottom:0;
+   	right:0;
+   	border-left: 1px rgba(121,73,106,1.00) solid;
+   	border-top: 1px rgba(121,73,106,1.00) solid;
+   	transform-origin:  top left;
+   	transform: scale(0);
+ }
+ &::before{
+    top:0;
+   	left:0;
+   	transform: scale(0);
+   	border-right: 1px rgba(121,73,106,1.00) solid;
+   	border-bottom: 1px rgba(121,73,106,1.00) solid;
+   	transform-origin: right bottom;
+  }
+  &:hover::after,&:hover::before{
+      transform: scale(1);
+      opacity: 1;
+  }
+  &:hover{
+    @extend %z-depth-1;
+  }
+}

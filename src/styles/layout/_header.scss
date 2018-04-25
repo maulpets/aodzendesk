@@ -1,0 +1,89 @@
+/*-------------------
+Header
+---------------*/
+
+.notLoaded > #banner .title{
+    opacity: 0;
+    @include translateY(-45%);
+}
+
+header{
+	&.full{
+	@include block-relative(100vh, 100vw);
+	@extend %z-depth-1;
+	@extend %image-bg;
+	background-attachment: fixed;
+
+		.title{
+			@include eZe( all, 1000ms);
+			@extend %center-vert;
+			left:20%;
+			max-width: 60%;
+			opacity: 1;
+			h1{
+				margin: 0;
+				color: white;
+			}
+			.caption{
+				margin: 0;
+				font-weight: 300;
+				color: white;
+			}
+
+		}
+
+		@media screen and (max-width: 1440px) {
+			@include block-relative(488px, 100%);
+		}
+		@media screen and (max-width: 960px) {
+			@include block-relative(325px, 100%);
+			.title{
+				left: 10%;
+				max-width: 80%;
+			}
+		}
+		@media screen and (max-width: 600px) {
+			@include block-relative(90vh, 100%);
+			max-height: 1000px;
+			background-attachment: local;
+			.title{
+				left: 5%;
+				max-width: 90%;
+				h1{
+					font-size: 10vw;
+				}
+
+				.caption{
+					font-size: 8vw;
+				}
+			}
+
+
+		}
+
+	}
+&#banner{
+  background-image: url(../images/landing-page-banner_l.jpg);
+
+	@media screen and (max-width: 1440px) {
+		background-image: url(../images/landing-page-banner_m.jpg);
+	}
+
+	@media screen and (max-width: 960px) {
+		background-image: url(../images/landing-page-banner_s.jpg);
+	}
+
+	@media screen and (max-width: 600px) {
+		background-image: url(../images/landing-page-banner_mobile.jpg);
+	}
+}
+}
+
+// header>h3::after{
+// 	font-family: 'Material Icons';
+// 	content: '\E5DB';
+// 	vertical-align: middle;
+// 	display: block;
+// 	color: white;
+//
+// }

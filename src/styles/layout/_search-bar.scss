@@ -1,0 +1,46 @@
+/******* DESKTOP SEARCH BAR ******/
+
+/*slide down when searching*/
+.navigation.searching>.navi, .navigation.searching>.subnavi{
+	@include translateY(199px);
+}
+
+/*search icon */
+#searchIcon{
+	cursor: pointer;
+}
+
+/*search bar box*/
+.searchBar{
+	display: flex;
+	position: fixed;
+	z-index: 1001;
+	height: 200px;
+	width: 100vw;
+	background: white;
+	will-change: transform;
+	@include translateY(-200px);
+
+  &.open{
+	   @include translateY(0px);
+  }
+
+  form{
+  	width: 60%;
+  	margin: auto;
+  	display: flex;
+  }
+  .searchInput{
+  	width: 90%;
+  	border: none;
+  	border-bottom: solid 2px rgba(121,73,106,1.00);
+  	line-height: 2;
+  }
+  form>input[type="submit"]{
+  	font-family: 'Material Icons';
+  	background: white;
+  	border-style: hidden;
+  	color:  rgba(121,73,106,1.00);
+  	-webkit-appearance:none;
+  }
+}

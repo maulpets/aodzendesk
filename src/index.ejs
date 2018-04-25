@@ -1,0 +1,369 @@
+<% var item, key %><%
+htmlWebpackPlugin.options.appMountIds = htmlWebpackPlugin.options.appMountIds || [] %><%
+htmlWebpackPlugin.options.lang = htmlWebpackPlugin.options.lang || "en" %><%
+htmlWebpackPlugin.options.links = htmlWebpackPlugin.options.links || [] %><%
+htmlWebpackPlugin.options.meta = htmlWebpackPlugin.options.meta || [] %><%
+htmlWebpackPlugin.options.scripts = htmlWebpackPlugin.options.scripts || []
+%><!DOCTYPE html>
+<html lang="<%= htmlWebpackPlugin.options.lang %>"<% if (htmlWebpackPlugin.files.manifest) { %> manifest="<%= htmlWebpackPlugin.files.manifest %>"<% } %>>
+  <head>
+    <meta charset="utf-8">
+    <meta content="ie=edge" http-equiv="x-ua-compatible"><%
+
+    if (htmlWebpackPlugin.options.baseHref) { %>
+    <base href="<%= htmlWebpackPlugin.options.baseHref %>"><%
+    } %><%
+
+    if (Array.isArray(htmlWebpackPlugin.options.meta)) { %><%
+      for (item of htmlWebpackPlugin.options.meta) { %>
+    <meta<% for (key in item) { %> <%= key %>="<%= item[key] %>"<% } %>><%
+      } %><%
+    } %><%
+
+    %>
+    <title><%= htmlWebpackPlugin.options.title %></title><%
+
+    if (htmlWebpackPlugin.files.favicon) { %>
+    <link href="<%= htmlWebpackPlugin.files.favicon %>" rel="shortcut icon" /><%
+    } %><%
+
+    if (htmlWebpackPlugin.options.mobile) { %>
+    <meta content="width=device-width, initial-scale=1" name="viewport"><%
+    } %><%
+
+    for (item of htmlWebpackPlugin.options.links) { %><%
+      if (typeof item === 'string' || item instanceof String) { item = { href: item, rel: 'stylesheet' } } %>
+    <link<% for (key in item) { %> <%= key %>="<%= item[key] %>"<% } %> /><%
+    } %><%
+
+    for (key in htmlWebpackPlugin.files.css) { %><%
+      if (htmlWebpackPlugin.files.cssIntegrity) { %>
+    <link
+      href="<%= htmlWebpackPlugin.files.css[key] %>"
+      rel="stylesheet"
+      integrity="<%= htmlWebpackPlugin.files.cssIntegrity[key] %>"
+      crossorigin="<%= webpackConfig.output.crossOriginLoading %>" /><%
+      } else { %>
+    <link href="<%= htmlWebpackPlugin.files.css[key] %>" rel="stylesheet" /><%
+      } %><%
+    } %><%
+    if (htmlWebpackPlugin.options.headHtmlSnippet) { %>
+    <%= htmlWebpackPlugin.options.headHtmlSnippet %><%
+    } %>
+
+  </head>
+
+
+  <body class="notLoaded" id="<%= htmlWebpackPlugin.options.pageID %>"><%
+    if (htmlWebpackPlugin.options.unsupportedBrowser) { %>
+    <style>.unsupported-browser { display: none; }</style>
+    <div class="unsupported-browser">
+      Sorry, your browser is not supported. Please upgrade to the latest version or switch your browser to use this
+      site. See <a href="http://outdatedbrowser.com/">outdatedbrowser.com</a> for options.
+    </div><%
+    } %><%
+
+    if (htmlWebpackPlugin.options.bodyHtmlSnippet) { %>
+    <%= htmlWebpackPlugin.options.bodyHtmlSnippet %><%
+    } %><%
+
+    if (htmlWebpackPlugin.options.appMountId) { %>
+    <div id="<%= htmlWebpackPlugin.options.appMountId %>"><%
+      if (htmlWebpackPlugin.options.appMountHtmlSnippet) { %>
+    <%= htmlWebpackPlugin.options.appMountHtmlSnippet %><%
+      } %>
+    </div><%
+    } %><%
+
+    for (item of htmlWebpackPlugin.options.appMountIds) { %>
+    <div id="<%= item %>"></div><%
+    } %>
+
+
+
+
+    <!--preloader-->
+    <%if (htmlWebpackPlugin.options.preLoader) { %>
+    <div class="preloader_fullscreen" id="preloader">
+    	<div class="preloader_wrapper">
+      		<div class="circle c1" ><div class="bg aodpurple"></div></div>
+      		<div class="circle c2"><div class="bg aodorange"></div></div>
+      		<div class="circle c3"><div class="bg aodgreen"></div></div>
+    	</div>
+    </div>
+    <% } %>
+
+
+    <!--search bar-->
+<%if (htmlWebpackPlugin.options.searchBar) { %>
+<div class="searchBar" id="searchBar">
+	<form id="searcher" class="search" action="../search-results.html">
+		<input type="text" name="searchInput" placeholder="Search..." class="searchInput">
+		<input type="submit" value="&#xE8B6;" name="termsEnd" id="searchButton">
+	</form>
+</div>
+<% } %>
+
+
+  <!--navigation-->
+<%if (htmlWebpackPlugin.options.navigationBar) { %>
+  <nav class="scrolled" id="navigation">
+  	<!--mobile menu button-->
+  	<div id="menuIcon"><span></span><span></span><span></span><span></span></div>
+  	<!--navi-->
+  	<ul class="navi" id="navi">
+  		<!--home logo-->
+  		<li class="left" id="logoLink"><a class="logo" href="../index.html"> </a></li>
+
+  		<!--mobile search / login-->
+  		<li id="mobileLR"><a href="../resources/index.html">Resources</a> | <a href="../news/index.html">News</a></li>
+  		<li id="mobileSearch">
+  			<form class="search" action="../search-results.html">
+  				<input type="text" name="searchInput" placeholder="Search..." class="searchInput">
+  				<input type="submit" value="&#xE8B6;" name="termsEnd">
+  			</form>
+  		</li>
+
+  		<!-- navigation pages-->
+  		<li class="mainLink left" id="solutionsLink"><a href="../solutions/index.html">Solutions</a></li>
+      <%if (htmlWebpackPlugin.options.onPage === 'solutions') { %>
+        <!-- MOBILE subpages-->
+    		<li id="subnaviMobile">
+    			<ul>
+    				<li><a href="#tlm">Time &amp; Labor</a></li>
+    				<li><a href="#alm">Leave Management</a></li>
+    				<li><a href="#scheduling">Scheduling</a></li>
+    				<li><a href="#mobile">Mobile</a></li>
+    				<li><a href="#compliance">Compliance</a></li>
+    				<li><a href="#dc">Data Collection</a></li>
+    			</ul>
+    		</li>
+      <% } %>
+
+      <li class="mainLink left" id="industriesLink"><a href="../industries/index.html">Industries</a></li>
+      <%if (htmlWebpackPlugin.options.onPage === 'industries') { %>
+      <li class="subnaviMobile">
+    			<ul>
+    				<li><a href="#healthcare" data-goTo="#healthcare">Healthcare</a></li>
+    				<li><a href="#hospitality" data-goTo="#hospitality">Hospitality</a></li>
+    				<li><a href="#retial" data-goTo="#retail">Retail</a></li>
+    				<li><a href="#banking" data-goTo="#banking">Banking</a></li>
+    				<li><a href="#np" data-goTo="#np">Non-profit</a></li>
+    				<li><a href="#ss"  data-goTo="#ss">Staffing &amp; Services</a></li>
+    				<li><a href="#manufacturing"  data-goTo="#manufacturing">Manufacturing</a></li>
+    				<li><a href="#edu" data-goTo="#edu">Education</a></li>
+    			</ul>
+    	</li>
+      <% } %>
+
+  		<li class="mainLink left" id="partnersLink"><a href="../partners/index.html">Partners</a></li>
+      <%if (htmlWebpackPlugin.options.onPage === 'partners') { %>
+        <li class="subnaviMobile">
+      		<ul>
+      			<li><a href="#verticalsLink">Verticle Focus</a></li>
+      			<li><a href="#psLink">Partner Services</a></li>
+      			<li><a href="#apiLink">Integration API</a></li>
+      		</ul>
+      	</li>
+      <% } %>
+
+
+  		<li class="mainLink left" id="aboutLink"><a href="../about/index.html">About</a></li>
+      <%if (htmlWebpackPlugin.options.onPage === 'about') { %>
+
+      <% } %>
+
+  		<li class="mainLink left" id="contactLink"><a href="../contact/index.html">Contact</a></li>
+  		<li class="mainLink right" id="searchLink"><i class="material-icons" id="searchIcon">search</i></li>
+  		<li class="mainLink right" id="resourcesLink"><a href="../resources/index.html">Resources</a></li>
+      <li class="mainLink right" id="newsLink"><a href="../news/index.html">News</a></li>
+  	</ul>
+
+    <%if (htmlWebpackPlugin.options.onPage === 'solutions') { %>
+      <ul class="subnavi">
+        <li><a href="#tlmLink">Time &amp; Labor</a></li>
+        <li><a href="#almLink">Leave Management</a></li>
+        <li><a href="#schedulingLink">Scheduling</a></li>
+        <li><a href="#mobileLink">Mobile</a></li>
+        <li><a href="#complianceLink">Compliance</a></li>
+        <li><a href="#dcLink">Data Collection</a></li>
+      </ul>
+    <% } %>
+
+    <%if (htmlWebpackPlugin.options.onPage === 'industries') { %>
+      <ul class="subnavi">
+      		<li><a href="#healthcareLink" data-goTo="#healthcare">Healthcare</a></li>
+      		<li><a href="#hospitalityLink" data-goTo="#hospitality">Hospitality</a></li>
+      		<li><a href="#retialLink" data-goTo="#retail">Retail</a></li>
+      		<li><a href="#bankingLink" data-goTo="#banking">Banking</a></li>
+      		<li><a href="#npLink" data-goTo="#np">Non-profit</a></li>
+      		<li><a href="#ssLink"  data-goTo="#ss">Staffing &amp; Services</a></li>
+      		<li><a href="#manufacturingLink"  data-goTo="#manufacturing">Manufacturing</a></li>
+      		<li><a href="#eduLink" data-goTo="#edu">Education</a></li>
+      </ul>
+    <% } %>
+
+    <%if (htmlWebpackPlugin.options.onPage === 'partners') { %>
+      <ul class="subnavi">
+      		<li><a href="#verticalsLink">Verticle Focus</a></li>
+      		<li><a href="#psLink">Partner Services</a></li>
+      		<li><a href="#apiLink">Integration API</a></li>
+      </ul>
+    <% } %>
+
+  </nav>
+<% } %>
+
+
+
+
+<header class="full" id="banner">
+	<div class="title">
+		<h1>Title <span>G</span>oes <span>H</span>ere</h1>
+		<h3 class="caption">Captions go in this space</h3>
+	</div>
+</header>
+
+
+
+<section>
+		<div class="container">
+			<div class="row center-row">
+				<article class="col l8 m12 s12">
+							<h2>About The Webinar</h2>
+							<p>If you are not already subject to paid sick leave regulations, it may be coming to you in the near future. So, what should you know and what should you do to prepare? This presentation will review key elements common to paid sick leave legislation and explore how automated systems can help ease employer burdens. It will:</p>
+							<ul class="bullets checkmarks">
+								<li>Review current mandates and the state of proposed legislation</li>
+								<li>Identify key elements common to most legislative efforts</li>
+								<li>Outline differences to look for in state or local ordinances that may affect you</li>
+								<li>Review how changes to leave-related policies can ease the administrative burden of calculating and awarding sick leave time</li>
+								<li>Explore how automation can help streamline leave accrual and administration</li>
+								<li>Identify key leave-related features to look for in your payroll or timekeeping system</li>
+							</ul>
+				</article>
+
+				<div class="col l4 m12 s12 ">
+					<h5>Resources</h5>
+					<div class="icon-col">
+						<a class="iconLink" href="#">
+							<div class="icon icon-whitepaper">
+
+							</div>
+							<ul>
+								<li>ACHACA</li>
+								<li>Presentation Slides</li>
+							</ul>
+						</a>
+
+						<a class="iconLink" href="#">
+							<div class="icon icon-research">
+
+							</div>
+							<ul>
+								<li>Paid Sick Leave</li>
+								<li>From Perk to Priority</li>
+							</ul>
+						</a>
+
+						<a class="iconLink" href="#">
+							<div class="icon icon-video">
+
+							</div>
+							<ul>
+								<li>PBJ Webinar</li>
+								<li>Mandatory Reporting</li>
+							</ul>
+						</a>
+					</div>
+
+				</div>
+			</div>
+	</section>
+
+
+				</div>
+
+			</div>
+
+		</main>
+
+
+
+
+
+
+
+
+<%if (htmlWebpackPlugin.options.onPage === 'solutions') { %>
+<% } %>
+
+
+<%if (htmlWebpackPlugin.options.footer) { %>
+  <footer>
+    <a class="logo" href="index.html" title="homepage"> </a>
+    <ul class="links">
+      <li><a href="../contact/index.html">Contact</a></li>
+      <li><a href="https://attendanceondemand.bamboohr.com/jobs/" target="_blank">Careers</a></li>
+      <li><a href="../privacy-policy.html">Privacy Policy</a></li>
+      <li><a href="../copyright.html">Copyright Notice</a></li>
+    </ul>
+    <ul class="foot">
+      <li id="companyCopyright"></li>
+      <li id="companyAddress"></li>
+      <li id="companyPhone"></li>
+    </ul>
+  </footer>
+<% } %>
+
+  <% if (htmlWebpackPlugin.options.window) { %>
+    <script type="text/javascript"><%
+      for (key in htmlWebpackPlugin.options.window) { %>
+      window['<%= key %>'] = <%= JSON.stringify(htmlWebpackPlugin.options.window[key]) %>;<%
+      } %>
+    </script>
+    <% } %><%
+
+    if (htmlWebpackPlugin.options.inlineManifestWebpackName) { %>
+    <%= htmlWebpackPlugin.files[htmlWebpackPlugin.options.inlineManifestWebpackName] %><%
+    } %><%
+
+    for (item of htmlWebpackPlugin.options.scripts) { %><%
+      if (typeof item === 'string' || item instanceof String) { item = { src: item, type: 'text/javascript' } } %>
+    <script<% for (key in item) { %> <%= key %>="<%= item[key] %>"<% } %>></script><%
+    } %><%
+
+    for (key in htmlWebpackPlugin.files.chunks) { %><%
+      if (htmlWebpackPlugin.files.jsIntegrity) { %>
+    <script
+      src="<%= htmlWebpackPlugin.files.chunks[key].entry %>"
+      type="text/javascript"
+      integrity="<%= htmlWebpackPlugin.files.jsIntegrity[htmlWebpackPlugin.files.js.indexOf(htmlWebpackPlugin.files.chunks[key].entry)] %>"
+      crossorigin="<%= webpackConfig.output.crossOriginLoading %>"></script><%
+      } else { %>
+    <script src="<%= htmlWebpackPlugin.files.chunks[key].entry %>" type="text/javascript"></script><%
+      } %><%
+    } %><%
+
+    if (htmlWebpackPlugin.options.devServer) { %>
+    <script src="<%= htmlWebpackPlugin.options.devServer %>/webpack-dev-server.js" type="text/javascript"></script><%
+    } %><%
+
+    if (htmlWebpackPlugin.options.googleAnalytics) { %>
+    <script type="text/javascript">
+      window.GoogleAnalyticsObject='ga';window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;<%
+
+      if (htmlWebpackPlugin.options.googleAnalytics.trackingId) { %>
+      ga('create','<%= htmlWebpackPlugin.options.googleAnalytics.trackingId %>','auto');<%
+      } else { throw new Error("html-webpack-template requires googleAnalytics.trackingId config"); } %><%
+
+      if (htmlWebpackPlugin.options.googleAnalytics.pageViewOnLoad) { %>
+      ga('send','pageview')<%
+      } %>
+    </script>
+    <script async defer src="https://www.google-analytics.com/analytics.js" type="text/javascript"></script><%
+    } %>
+
+
+
+  </body>
+</html>

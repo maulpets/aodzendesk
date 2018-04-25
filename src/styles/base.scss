@@ -1,0 +1,71 @@
+//import any styles here paul!!
+//maybe a selector? idk maunal for now
+//@import 'relative_path/filname_noxtention'
+
+@charset "UTF-8";
+
+// materialize
+@import 'materialize/materialize';
+
+@import 'helpers/mixins';
+@import 'helpers/variables';
+@import 'helpers/extenders';
+
+
+@import 'layout/header';
+@import 'layout/footer';
+@import 'layout/nav';
+@import 'layout/search-bar';
+@import 'layout/preloader';
+@import 'layout/page-elements';
+@import 'layout/icons';
+@import 'layout/layout';
+
+@import 'customize';
+
+body, html{
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Open Sans', sans-serif;
+	letter-spacing: 0.025em;
+}
+
+
+h1 {
+	font-weight: 800;
+	text-transform: uppercase;
+	letter-spacing: 0.075em;
+		@media screen and (max-width: 600px) {
+			font-size: 3.0em;
+		}
+}
+
+h1::first-letter, h1>span{
+	font-size: 115%;
+}
+
+h2 {
+	font-weight: 600;
+}
+
+h3 {
+	font-size: 2.5em;
+	font-weight: 600;
+			@media screen and (max-width: 600px) {
+				font-size: 2.0em;
+			}
+}
+
+
+article{
+  width: 1400px;
+  max-width: 100%;
+  margin: auto;
+}
+
+*:focus{
+	outline: none;
+}

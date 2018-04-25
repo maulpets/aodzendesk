@@ -1,0 +1,65 @@
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+
+}
+
+@mixin translateY($value){
+  -webkit-transform: translateY($value);
+     -moz-transform: translateY($value);
+      -ms-transform: translateY($value);
+          transform: translateY($value);
+}
+
+@mixin eZe($property, $time){
+  -webkit-transition: $property ease-in-out $time;
+     -moz-transition: $property ease-in-out $time;
+       -o-transition: $property ease-in-out $time;
+          transition: $property ease-in-out $time;
+}
+
+@mixin scaleX($value){
+  -webkit-transform: scaleX($value);
+     -moz-transform: scaleX($value);
+      -ms-transform: scaleX($value);
+          transform: scaleX($value);
+}
+
+@mixin tOrgin($xValue, $yValue){
+ -webkit-transform-origin: $xValue $yValue;
+      -ms-transform-orgin: $xValue $yValue;
+         transform-origin: $xValue $yValue;
+}
+
+@mixin block-relative($height, $width){
+    display: block;
+    position: relative;
+    height: $height;
+    width: $width;
+}
+@mixin block-absolute($height, $width){
+    display: block;
+    position: absolute;
+    height: $height;
+    width: $width;
+}
+
+@mixin setHW($height, $width){
+  max-height: $height;
+  min-height: $height;
+  height: $height;
+  max-width: $width;
+  min-width: $width;
+  width: $width;
+}
+
+@mixin icon-bg($name){
+    $url:"../images/icons/#{$name}.svg";
+    background-color: white;
+    background-size: contain;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-image: url($url);;
+}
