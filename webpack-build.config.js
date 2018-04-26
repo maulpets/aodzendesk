@@ -6,7 +6,7 @@ require('html-webpack-template');
 
 
 module.exports = {
-  entry: ['./src/scripts/maulpets.js'],
+  entry: ['./src/maulpets.js'],
   module: {
     rules: [
       {
