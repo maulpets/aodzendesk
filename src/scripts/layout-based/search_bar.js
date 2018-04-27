@@ -11,6 +11,9 @@ openSearch.addEventListener("click", () => {
     searchBar.classList.add('open');
     navi.classList.add('searching');
     searchIcon.textContent = "keyboard_arrow_up";
+
+
+
   }
     else {
       searchBar.classList.remove('open');

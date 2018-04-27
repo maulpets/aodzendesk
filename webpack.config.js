@@ -2,8 +2,11 @@ const metatags = require('./src/pages/meta-tags.json');
 const headerLinks = require('./src/pages/header-links.json');
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const webpack = require('webpack');
+let FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 require('html-webpack-template');
 
+// cmd "/c taskkill /im node.exe /F"
 
 module.exports = {
   entry: ['./src/maulpets.js'],
@@ -64,6 +67,10 @@ module.exports = {
           ],
          title: 'Landing Page'
        }),
+       new webpack.ProvidePlugin({
+          anime: 'animejs'
+        }),
+        new FaviconsWebpackPlugin('./src/images/logos/AOD_Circles.svg')
     // new MiniCssExtractPlugin({
     //   filename: "[name].css",
     //   chunkFilename: "[id].css"

@@ -73,7 +73,7 @@ address + phone number
 		flex-direction: column;
 	     li{
       		margin: auto;
-      		padding: 0px;
+      		padding: .25em 0;
 	        }
       }
 }
@@ -81,10 +81,14 @@ address + phone number
 @media screen and (max-width: 600px) {
 	/*link into column*/
 	.links{
-		flex-flow: row wrap;
-    li {
-      margin: auto;
+		flex-flow: column;
+      li {
+        margin: auto;
+        a{
+          padding: .25em;
+      }
     }
+
   }
 }
 }

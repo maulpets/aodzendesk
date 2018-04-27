@@ -39,7 +39,21 @@
   display: inline-flex;
   align-items: center;
 	position: relative;
+  &.icon-btn{
 
+    background-color: $aodPurple;
+    border-radius: 2px;
+    @extend %z-depth-1;
+    @include setHW(70px, auto);
+
+    .icon{
+      background-color: transparent;
+    }
+    ul{
+      color: white;
+    }
+
+  }
   .icon{
     @include setHW(50px,50px);
   }

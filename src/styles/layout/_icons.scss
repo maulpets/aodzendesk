@@ -8,7 +8,9 @@
   &.icon-research{
     @include icon-bg(research);
   }
-
+  &.icon-headset-white{
+    @include icon-bg(supportHeadset_white);
+  }
 
 
 

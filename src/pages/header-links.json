@@ -1,22 +1,12 @@
 [{
   "href": "https://fonts.googleapis.com/icon?family=Material+Icons",
-  "rel": "stylesheet"
+  "rel": "preload",
+  "as":"font",
+  "crossorigin":"crossorigin"
 },
 {
   "href": "https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,800|Roboto:300,400,700,900",
-  "rel": "stylesheet"
-},
-{
-  "href": "./aod_icon_144x144.png",
-  "rel": "icon",
-  "sizes": "142x142"
-},
-{
-    "href": "./aod_icon_144x144.png",
-    "rel": "apple-touch-icon-precomposed",
-    "sizes": "142x142"
-},
-{
-    "href": "./favicon.png",
-    "rel": "shortcut icon"
+  "rel": "preload",
+  "as":"font",
+  "crossorigin":"crossorigin"
 }]

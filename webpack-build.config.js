@@ -2,11 +2,17 @@ const metatags = require('./src/pages/meta-tags.json');
 const headerLinks = require('./src/pages/header-links.json');
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const webpack = require('webpack');
 require('html-webpack-template');
+let FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 
 
 module.exports = {
   entry: ['./src/maulpets.js'],
+  output: {
+  	path: "//?/W:" + "/dist",
+  	publicPath: "http://aodtest.infotronics.com/dist/"
+  },
   module: {
     rules: [
       {
@@ -70,9 +76,13 @@ module.exports = {
           ],
          title: 'Landing Page'
        }),
-    new MiniCssExtractPlugin({
-      // filename: "[name].css",
-      // chunkFilename: "[id].css"
-    })
+      new MiniCssExtractPlugin({
+        // filename: "[name].css",
+        // chunkFilename: "[id].css"
+      }),
+      new webpack.ProvidePlugin({
+         anime: 'animejs'
+       }),
+      new FaviconsWebpackPlugin('./src/images/logos/AOD_Circles.svg')
   ]
 };
