@@ -32,7 +32,13 @@ module.exports = {
       {
           test: /\.(png|svg|jpg|gif)$/,
           use: [
-          'file-loader'
+            {
+              loader: 'file-loader',
+              options: {
+                name: '[name].[ext]',
+                outputPath: './images'
+              }
+            }
           ]
       }
     ]
@@ -71,9 +77,5 @@ module.exports = {
           anime: 'animejs'
         }),
         new FaviconsWebpackPlugin('./src/images/logos/AOD_Circles.svg')
-    // new MiniCssExtractPlugin({
-    //   filename: "[name].css",
-    //   chunkFilename: "[id].css"
-    // })
   ]
 };

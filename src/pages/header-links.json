@@ -1,12 +1,31 @@
 [{
   "href": "https://fonts.googleapis.com/icon?family=Material+Icons",
-  "rel": "preload",
+  "rel": "stylesheet",
   "as":"font",
   "crossorigin":"crossorigin"
-},
-{
+},{
   "href": "https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,800|Roboto:300,400,700,900",
   "rel": "preload",
   "as":"font",
   "crossorigin":"crossorigin"
+},{
+  "rel":"preload",
+  "as":"image",
+  "href":"./images/landing-page-banner_mobile.jpg",
+  "media":"(max-width:600px)"
+},{
+  "rel":"preload",
+  "as":"image",
+  "href":"./images/landing-page-banner_s.jpg",
+  "media":"(max-width:960px)"
+},{
+  "rel":"preload",
+  "as":"image",
+  "href":"./images/landing-page-banner_m.jpg",
+  "media":"(max-width:1440px)"
+},{
+  "rel":"preload",
+  "as":"image",
+  "href":"./images/landing-page-banner_l.jpg",
+  "media":"(min-width:1440px)"
 }]

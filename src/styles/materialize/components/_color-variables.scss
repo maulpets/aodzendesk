@@ -324,6 +324,20 @@ $grey: (
   "darken-4":   #212121
 );
 
+
+$aodpurple: (
+  "base": #79496A
+);
+$aodorange: (
+  "base": #E7A614
+);
+$aodgreen: (
+  "base": #576423
+);
+$aodgray: (
+  "base": #999999
+);
+
 $shades: (
   "black":        #000000,
   "white":        #FFFFFF,
@@ -351,9 +365,12 @@ $colors: (
   "brown": $brown,
   "blue-grey": $blue-grey,
   "grey": $grey,
+  "aodpurple": $aodpurple,
+  "aodorange": $aodorange,
+  "aodgreen": $aodgreen,
+  "aodgray": $aodgray,
   "shades": $shades
 ) !default;
-
 
 // usage: color("name_of_color", "type_of_color")
 // to avoid to repeating map-get($colors, ...)

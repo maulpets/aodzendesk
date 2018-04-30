@@ -11,7 +11,7 @@ module.exports = {
   entry: ['./src/maulpets.js'],
   output: {
   	path: "//?/W:" + "/dist",
-  	publicPath: "http://aodtest.infotronics.com/dist/"
+  	// publicPath: "http://aodtest.infotronics.com/dist/"
   },
   module: {
     rules: [
@@ -38,12 +38,18 @@ module.exports = {
                }
            ]
        }, //SASS - END loader,
-      {
-          test: /\.(png|svg|jpg|gif)$/,
-          use: [
-          'file-loader'
-          ]
-      }
+       {
+           test: /\.(png|svg|jpg|gif)$/,
+           use: [
+             {
+               loader: 'file-loader',
+               options: {
+                 name: '[name].[ext]',
+                 outputPath: './images'
+               }
+             }
+           ]
+       }
     ]
   },
   plugins: [
