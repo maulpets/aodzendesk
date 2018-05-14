@@ -33,14 +33,16 @@
 }
 
 
+
 .iconLink{
   @include eZe(all, 400ms);
 	padding: 10px 20px;
   display: inline-flex;
   align-items: center;
 	position: relative;
-  &.icon-btn{
+  margin: .25em auto;
 
+  &.icon-btn{
     background-color: $aodPurple;
     border-radius: 2px;
     @extend %z-depth-1;
@@ -56,6 +58,10 @@
   }
   .icon{
     @include setHW(50px,50px);
+    svg{
+      height: 100%;
+      width: 100%;
+    }
   }
 
   ul{
@@ -100,3 +106,24 @@
     @extend %z-depth-1;
   }
 }
+
+.full_logo{
+  @include block-relative(110px, 80%);
+  background-repeat: no-repeat;
+  margin: 10% auto;
+  background-size: contain;
+  background-image:url(../images/logos/AODinc_Color_BlackText.svg);
+}
+
+.faded-hover{
+  opacity: .75;
+  @include eZe(all, 400ms);
+  &:hover{
+    @include scale(1.05);
+    opacity: 1;
+    }
+  }
+
+  .no-overflow{
+    overflow: hidden !important;
+  }

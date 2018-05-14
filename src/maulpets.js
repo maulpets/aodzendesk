@@ -18,7 +18,7 @@ importImages(require.context('./images/', true, /\.(png|jpg)$/));
 // *****************//
 //     FUNCTIONS    //
 // *****************//
-// import footer from './scripts/layout-based/page_footer';
+import footer from './scripts/layout-based/page_footer';
 // import searchBar from './scripts/layout-based/search_bar';
 import materialize from './scripts/materialize/src/materialize.js';
 import lazyLoad from './scripts/custom/lazyLoader.js';

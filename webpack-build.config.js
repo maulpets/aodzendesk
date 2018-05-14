@@ -5,6 +5,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const webpack = require('webpack');
 require('html-webpack-template');
 let FaviconsWebpackPlugin = require('favicons-webpack-plugin');
+const HtmlWebpackInlineSVGPlugin = require('html-webpack-inline-svg-plugin');
 
 
 module.exports = {
@@ -25,9 +26,6 @@ module.exports = {
       { //SASS - START loader to process cool sass to lame-o css3
        test: /\.scss$/,
        use: [   MiniCssExtractPlugin.loader,
-               // {
-               // loader: "style-loader" // creates style nodes from JS strings
-               // },
                {
                loader: "css-loader" // translates CSS into CommonJS
                },
@@ -89,6 +87,9 @@ module.exports = {
       new webpack.ProvidePlugin({
          anime: 'animejs'
        }),
-      new FaviconsWebpackPlugin('./src/images/logos/AOD_Circles.svg')
+      new FaviconsWebpackPlugin('./src/images/logos/AOD_Circles.svg'),
+      new HtmlWebpackInlineSVGPlugin({
+           runPreEmit: true,
+       })
   ]
 };

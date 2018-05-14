@@ -20,6 +20,14 @@
           transition: $property ease-in-out $time;
 }
 
+@mixin scale($value){
+  -webkit-transform: scale($value);
+     -moz-transform: scale($value);
+      -ms-transform: scale($value);
+          transform: scale($value);
+}
+
+
 @mixin scaleX($value){
   -webkit-transform: scaleX($value);
      -moz-transform: scaleX($value);

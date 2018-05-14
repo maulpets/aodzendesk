@@ -325,16 +325,44 @@ $grey: (
 );
 
 
+
 $aodpurple: (
-  "base": #79496A
+  "base": #79496A,
+  "lighten-5":  #F795D9,
+  "lighten-4":  #D681BC,
+  "lighten-3":  #CC7BB3,
+  "lighten-2":  #AB6796,
+  "lighten-1":  #945982,
+  "darken-1":   #6B415E,
+  "darken-2":   #5C3750,
+  "darken-3":   #523147,
+  "darken-4":   #42283A
 );
 $aodorange: (
-  "base": #E7A614
+  "base": #E7A614,
+  "lighten-5":  #FFB716,
+  "lighten-4":  #FFB716,
+  "lighten-3":  #FFB716,
+  "lighten-2":  #FAB416,
+  "lighten-1":  #F0AC15,
+  "darken-1":   #D99C13,
+  "darken-2":   #CA9111,
+  "darken-3":   #C08A11,
+  "darken-4":   #B07F0F
 );
 $aodgreen: (
-  "base": #576423
+  "base": #576423,
+  "lighten-5":  #A6BF43,
+  "lighten-4":  #9EB53F,
+  "lighten-3":  #879C36,
+  "lighten-2":  #76872F,
+  "lighten-1":  #647328,
+  "darken-1":   #546122,
+  "darken-2":   #49541D,
+  "darken-3":   #3E4719,
+  "darken-4":   #353D15
 );
-$aodgray: (
+$aodgrey: (
   "base": #999999
 );
 
@@ -368,7 +396,7 @@ $colors: (
   "aodpurple": $aodpurple,
   "aodorange": $aodorange,
   "aodgreen": $aodgreen,
-  "aodgray": $aodgray,
+  "aodgray": $aodgrey,
   "shades": $shades
 ) !default;
 

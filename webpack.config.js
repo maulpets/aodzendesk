@@ -5,6 +5,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const webpack = require('webpack');
 let FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 require('html-webpack-template');
+const HtmlWebpackInlineSVGPlugin = require('html-webpack-inline-svg-plugin');
 
 // cmd "/c taskkill /im node.exe /F"
 
@@ -76,6 +77,9 @@ module.exports = {
        new webpack.ProvidePlugin({
           anime: 'animejs'
         }),
-        new FaviconsWebpackPlugin('./src/images/logos/AOD_Circles.svg')
+        new FaviconsWebpackPlugin('./src/images/logos/AOD_Circles.svg'),
+        new HtmlWebpackInlineSVGPlugin({
+             runPreEmit: true,
+         })
   ]
 };
