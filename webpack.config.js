@@ -7,6 +7,8 @@ let FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 require('html-webpack-template');
 const HtmlWebpackInlineSVGPlugin = require('html-webpack-inline-svg-plugin');
 
+const pageConfig = require('./landing-page-config.json');
+
 // cmd "/c taskkill /im node.exe /F"
 
 module.exports = {
@@ -50,7 +52,6 @@ module.exports = {
          inject: false,
          template: 'src/index.ejs',
          filename: 'index.html',
-         // outputRoot: 'http://aodtest.infotronics.com/',
          googleAnalytics: {
            trackingId: 'UA-84943447-5',
            pageViewOnLoad: true
@@ -61,18 +62,9 @@ module.exports = {
          links: headerLinks,
          pageID: 'landing-page',
          preLoader: true,
-         searchBar: false,
          navigationBar: false,
          footer: true,
-         // inlineManifestWebpackName: 'webpackManifest',
-         scripts: [
-              // {
-              //   src: '',
-              //   integrity: 'sha256-slogkvB1K3VOkzAI8QITxV3VzpOnkeNVsKvtkYLMjfk',
-              //   crossorigin: "anonymous"
-              // }
-          ],
-         title: 'Landing Page'
+         title: pageConfig.title
        }),
        new webpack.ProvidePlugin({
           anime: 'animejs'

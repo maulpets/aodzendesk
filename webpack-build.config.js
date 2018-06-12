@@ -7,11 +7,12 @@ require('html-webpack-template');
 let FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 const HtmlWebpackInlineSVGPlugin = require('html-webpack-inline-svg-plugin');
 
+const pageConfig = require('./landing-page-config.json');
 
 module.exports = {
   entry: ['./src/maulpets.js'],
   output: {
-  	path: "//?/W:" + "/dist",
+  	path: "//?/W:" + "/" + pageConfig.dir,
   	// publicPath: "http://aodtest.infotronics.com/dist/"
   },
   module: {
@@ -67,7 +68,6 @@ module.exports = {
          links: headerLinks,
          pageID: 'landing-page',
          preLoader: true,
-         searchBar: false,
          navigationBar: false,
          footer: true,
          // inlineManifestWebpackName: 'webpackManifest',
@@ -78,7 +78,7 @@ module.exports = {
               //   crossorigin: "anonymous"
               // }
           ],
-         title: 'Landing Page'
+         title: pageConfig.title
        }),
       new MiniCssExtractPlugin({
         // filename: "[name].css",
