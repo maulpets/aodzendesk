@@ -7,6 +7,8 @@ htmlWebpackPlugin.options.scripts = htmlWebpackPlugin.options.scripts || []
 %><!DOCTYPE html>
 <html lang="<%= htmlWebpackPlugin.options.lang %>"<% if (htmlWebpackPlugin.files.manifest) { %> manifest="<%= htmlWebpackPlugin.files.manifest %>"<% } %>>
   <head>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,800|Roboto:300,400,700,900" rel="stylesheet">
     <meta charset="utf-8">
     <meta content="ie=edge" http-equiv="x-ua-compatible"><%
 
@@ -54,130 +56,316 @@ htmlWebpackPlugin.options.scripts = htmlWebpackPlugin.options.scripts || []
   </head>
 
 
-  <body class="notLoaded" id="<%= htmlWebpackPlugin.options.pageID %>"><%
-    if (htmlWebpackPlugin.options.unsupportedBrowser) { %>
-    <style>.unsupported-browser { display: none; }</style>
-    <div class="unsupported-browser">
-      Sorry, your browser is not supported. Please upgrade to the latest version or switch your browser to use this
-      site. See <a href="http://outdatedbrowser.com/">outdatedbrowser.com</a> for options.
-    </div><%
-    } %><%
-
-    if (htmlWebpackPlugin.options.bodyHtmlSnippet) { %>
-    <%= htmlWebpackPlugin.options.bodyHtmlSnippet %><%
-    } %><%
-
-    if (htmlWebpackPlugin.options.appMountId) { %>
-    <div id="<%= htmlWebpackPlugin.options.appMountId %>"><%
-      if (htmlWebpackPlugin.options.appMountHtmlSnippet) { %>
-    <%= htmlWebpackPlugin.options.appMountHtmlSnippet %><%
-      } %>
-    </div><%
-    } %><%
-
-    for (item of htmlWebpackPlugin.options.appMountIds) { %>
-    <div id="<%= item %>"></div><%
-    } %>
+  <body class="community-enabled">
 
 
+    <header class="header-fixed">
+      <nav>
+        <div class="nav-wrapper ">
+          <a class="brand-logo" title="Home" href="/hc/en-us">   <img hieght="100%" width="100%" src="//theme.zdassets.com/theme_assets/2329816/729ff394598b622c2208c53934513d77f1a6d48f.svg" alt=""> </a>
+          <div class="search-bar-wrapper" id="top-search-bar">
+            <form role="search" class="search-bar" data-search="" data-instant="true" autocomplete="off" action="/hc/en-us/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="✓"><input type="search" name="query" id="query" placeholder="Search" autocomplete="off" aria-label="Search"></form>
+          </div>
+          <div class="user-info-wrapper">
+            <div id="user" class="user-info dropdown" data-helper="user_info">
+              <div class="btn with-image dropdown-toggle" role="button">
+                <img id="user-avatar" class="user-avatar" alt="Paul Mets" src="https://attendanceondemand.zendesk.com/system/photos/3600/5045/4992/CywGpS4W8AEKdgi.png">
+                <span id="user-name">Paul Mets</span>
+              </div>
+              <div id="user-dropdown" class="dropdown-menu dropdown-menu-end dropdown-menu-caret" aria-expanded="false">
+                <div role="menu" id="user-menu">
+                  <a class="my-activities" href="/hc/en-us/requests" role="menuitem">My activities</a>
+                  <a role="menuitem" href="/hc/en-us/profiles/365815907871-Paul-Mets">My profile</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <header class="header-category hidden" id="header-category">
+      <nav>
+        <div class="nav-wrapper ">
+          <a class="brand-logo" title="Home" href="/hc/en-us">   <img hieght="100%" width="100%" src="//theme.zdassets.com/theme_assets/2329816/729ff394598b622c2208c53934513d77f1a6d48f.svg" alt=""> </a>
+          <div class="search-bar-wrapper">
+            <form role="search" class="search-bar" data-search="" data-instant="true" autocomplete="off" action="/hc/en-us/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="✓"><input type="search" name="query" id="query" placeholder="Search" autocomplete="off" aria-label="Search"></form>
+          </div>
+          <div class="user-info-wrapper">
+            <div id="user" class="user-info dropdown" data-helper="user_info">
+              <div class="btn with-image dropdown-toggle" role="button">
+                <img id="user-avatar" class="user-avatar" alt="Paul Mets" src="https://attendanceondemand.zendesk.com/system/photos/3600/5045/4992/CywGpS4W8AEKdgi.png">
+                <span id="user-name">Paul Mets</span>
+              </div>
+              <div id="user-dropdown" class="dropdown-menu dropdown-menu-end dropdown-menu-caret" aria-expanded="false">
+                <div role="menu" id="user-menu">
+                  <a class="my-activities" href="/hc/en-us/requests" role="menuitem">My activities</a>
+                  <a role="menuitem" href="/hc/en-us/profiles/365815907871-Paul-Mets">My profile</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
 
 
-    <!--preloader-->
-    <%if (htmlWebpackPlugin.options.preLoader) { %>
-    <div class="preloader_fullscreen" id="preloader">
-    	<div class="preloader_wrapper">
-      		<div class="circle c1" ><div class="bg aodpurple"></div></div>
-      		<div class="circle c2"><div class="bg aodorange"></div></div>
-      		<div class="circle c3"><div class="bg aodgreen"></div></div>
-    	</div>
+
+
+      <main role="main">
+        <section class="section hero">
+          <div class="hero-inner">
+            <!--     <form role="search" class="search search-full" data-search="" data-instant="true" autocomplete="off" action="/hc/en-us/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" /><input type="search" name="query" id="query" placeholder="Search" autocomplete="off" aria-label="Search" /></form> -->
+          </div>
+        </section>
+
+        <div class="container">
+          <section class="section knowledge-base">
+            <div>
+              <div>
+                <h1>TEST</h1>
+            </div>
+          </div>
+
+        <section>
+          <div class="row">
+
+            <div class="col s12 m6">
+              <div class="card">
+                <div class="card-content">
+                  <span class="card-title">Channel Partner Conference</span>
+                  <p>Channel Partner Conference 2018 is so awesome. You definitely don't want to miss it!</p>
+                </div>
+                <div class="card-action">
+                  <a href="/hc/en-us/categories/360000522231-Channel-Partner-Conference">Explore</a>
+
+                </div>
+              </div>
+            </div>
+
+            <div class="col s12 m6">
+              <div class="card">
+                <div class="card-content">
+                  <span class="card-title">Product Updates</span>
+                  <p>Here are the recorded webinars as well as product update articles about the newest updates to WorkSync</p>
+                </div>
+                <div class="card-action">
+                  <a href="/hc/en-us/categories/360000584931-Product-Updates">Explore</a>
+
+                </div>
+              </div>
+            </div>
+
+            <div class="col s12 m6">
+              <div class="card">
+                <div class="card-content">
+                  <span class="card-title">Test-Section</span>
+                  <p>This is a test</p>
+                </div>
+                <div class="card-action">
+                  <a href="/hc/en-us/categories/360000580972-Test-Section">Explore</a>
+
+                </div>
+              </div>
+            </div>
+
+            <div class="col s12 m6">
+              <div class="card">
+                <div class="card-content">
+                  <span class="card-title">Mastering WorkSync</span>
+                  <p>Here is the info for Mastering WorkSync</p>
+                </div>
+                <div class="card-action">
+                  <a href="/hc/en-us/categories/360000584891-Mastering-WorkSync">Explore</a>
+
+                </div>
+              </div>
+            </div>
+
+            <div class="col s12 m6">
+              <div class="card">
+                <div class="card-content">
+                  <span class="card-title">Sales Enablement</span>
+                  <p>Here are resources that help you sell WorkSync and all of the rest of Attendance on Demand's products</p>
+                </div>
+                <div class="card-action">
+                  <a href="/hc/en-us/categories/360000570792-Sales-Enablement">Explore</a>
+
+                </div>
+              </div>
+            </div>
+
+            <div class="col s12 m6">
+              <div class="card">
+                <div class="card-content">
+                  <span class="card-title">Technical / Support</span>
+                  <p>Technical and support related documentation to help your technicians and end-users use our product to it's full extent</p>
+                </div>
+                <div class="card-action">
+                  <a href="/hc/en-us/categories/360000570812-Technical-Support">Explore</a>
+
+                </div>
+              </div>
+            </div>
+
+            <div class="col s12 m6">
+              <div class="card">
+                <div class="card-content">
+                  <span class="card-title">Advertising and Marketing</span>
+                  <p>This is where advertising and marketing information can be found. This includes brochures, images and tradeshow cards...</p>
+                </div>
+                <div class="card-action">
+                  <a href="/hc/en-us/categories/360000584911-Advertising-and-Marketing">Explore</a>
+
+                </div>
+              </div>
+            </div>
+
+            <div class="col s12 m6">
+              <div class="card">
+                <div class="card-content">
+                  <span class="card-title">General</span>
+                  <p></p>
+                </div>
+                <div class="card-action">
+                  <a href="/hc/en-us/categories/360000461352-General">Explore</a>
+
+                </div>
+              </div>
+            </div>
+
+        </div>
+
+        </section>
+
+
+
+
+
+
+      </section>
+
+
+        <section class="section community">
+          <h2>Community</h2>
+          <a class="community-link" href="/hc/en-us/community/topics">
+            Join the conversation
+          </a>
+
+          <div class="community-image"></div>
+        </section>
+
+
+      <section class="section activity">
+        <div data-app="recent-activity" data-url="/hc/api/internal/recent_activities?locale=en-us"><div class="recent-activity"><h2 class="recent-activity-header">Recent activity</h2><ul class="recent-activity-list" style=""><li class="recent-activity-item" data-recent-activity-action="article_created"><a class="recent-activity-item-parent" href="/hc/en-us/sections/360001209092-Documentation-Warehouse?">Documentation Warehouse</a>
+    <a class="recent-activity-item-link" href="/hc/en-us/articles/360005470932-Uploaded-via-cURL-cli-test2?">Uploaded via cURL cli - test2</a>
+    <div class="recent-activity-item-meta">
+      <div class="recent-activity-item-time">Article created 6 hours ago</div>
+      <div class="recent-activity-item-comment"><span>0</span></div>
     </div>
-    <% } %>
+    </li><li class="recent-activity-item" data-recent-activity-action="article_comment_added"><a class="recent-activity-item-parent" href="/hc/en-us/sections/360001209092-Documentation-Warehouse?">Documentation Warehouse</a>
+    <a class="recent-activity-item-link" href="/hc/en-us/articles/360004226372-What-are-these-sections-and-articles-doing-here-?">What are these sections and articles doing here?</a>
+    <div class="recent-activity-item-meta">
+      <div class="recent-activity-item-time">Comment added 7 days ago</div>
+      <div class="recent-activity-item-comment"><span>1</span></div>
+    </div>
+    </li><li class="recent-activity-item" data-recent-activity-action="article_created"><a class="recent-activity-item-parent" href="/hc/en-us/sections/360001209092-Documentation-Warehouse?">Documentation Warehouse</a>
+    <a class="recent-activity-item-link" href="/hc/en-us/articles/360004900431-Uploaded-via-cURL-cli?">Uploaded via cURL cli</a>
+    <div class="recent-activity-item-meta">
+      <div class="recent-activity-item-time">Article created 12 days ago</div>
+      <div class="recent-activity-item-comment"><span>0</span></div>
+    </div>
+    </li><li class="recent-activity-item" data-recent-activity-action="article_created"><a class="recent-activity-item-parent" href="/hc/en-us/sections/360001315931-2018-Channel-Partner-Meeting-Material?">2018 Channel Partner Meeting Material</a>
+    <a class="recent-activity-item-link" href="/hc/en-us/articles/360004535012-Flawless-Worksync-Training-Material?">Flawless Worksync Training Material</a>
+    <div class="recent-activity-item-meta">
+      <div class="recent-activity-item-time">Article created 22 days ago</div>
+      <div class="recent-activity-item-comment"><span>0</span></div>
+    </div>
+    </li><li class="recent-activity-item" data-recent-activity-action="post_created"><a class="recent-activity-item-parent" href="/hc/en-us/community/topics/360000316552-General-Discussion?">General Discussion</a>
+    <a class="recent-activity-item-link" href="/hc/en-us/community/posts/360010574311?">Excellent New and Exciting Things</a>
+    <div class="recent-activity-item-meta">
+      <div class="recent-activity-item-time">Post created 22 days ago</div>
+      <div class="recent-activity-item-comment"><span>0</span></div>
+    </div>
+    </li></ul><div class="recent-activity-no-activities" style="display: none;"></div><div class="recent-activity-loader" style="display: none;">...</div><div class="recent-activity-controls" style=""><a href="#" data-recent-activity-seemore="">See more</a>
+    </div></div></div>
+      </section>
+    </div>
 
 
-<header class="full" id="banner">
-	<div class="title">
-		<h1>Title <span>G</span>oes <span>H</span>ere</h1>
-		<h3 class="caption">Captions go in this space</h3>
-	</div>
-</header>
+    <!-- <script>
+    includeHTML();
+    </script> -->
+      </main>
 
+      <footer class="footer">
+      <div class="footer-inner">
+        <a title="Home" href="/hc/en-us">Attendance on Demand</a>
 
-<main>
-  <section>
-		<div class="container">
-			<div class="row center-row">
-				<article class="col l8 m12 s12">
-							<h2>About The Webinar</h2>
-							<p>If you are not already subject to paid sick leave regulations, it may be coming to you in the near future. So, what should you know and what should you do to prepare? This presentation will review key elements common to paid sick leave legislation and explore how automated systems can help ease employer burdens. It will:</p>
-							<ul class="bullets checkmarks">
-								<li>Review current mandates and the state of proposed legislation</li>
-								<li>Identify key elements common to most legislative efforts</li>
-								<li>Outline differences to look for in state or local ordinances that may affect you</li>
-								<li>Review how changes to leave-related policies can ease the administrative burden of calculating and awarding sick leave time</li>
-								<li>Explore how automation can help streamline leave accrual and administration</li>
-								<li>Identify key leave-related features to look for in your payroll or timekeeping system</li>
-							</ul>
-				</article>
+        <div class="footer-language-selector">
 
-				<div class="col l4 m12 s12 ">
-					<h5>Resources</h5>
-					<div class="icon-col">
-						<a class="iconLink" href="#">
-							<div class="icon">
-                <img inline src="./src/images/icons/video.svg">
-							</div>
-							<ul>
-								<li>ACHACA</li>
-								<li>Presentation Slides</li>
-							</ul>
-						</a>
-
-						<a class="iconLink" href="#">
-							<div class="icon">
-                  <img inline src="./src/images/icons/video.svg">
-							</div>
-							<ul>
-								<li>Paid Sick Leave</li>
-								<li>From Perk to Priority</li>
-							</ul>
-						</a>
-
-						<a class="iconLink" href="#">
-							<div class="icon">
-                  <img inline src="./src/images/icons/research.svg">
-							</div>
-							<ul>
-								<li>PBJ Webinar</li>
-								<li>Mandatory Reporting</li>
-							</ul>
-						</a>
-					</div>
-
-				</div>
-			</div>
-	</section>
-</main>
+        </div>
+      </div>
+    </footer>
 
 
 
-<%if (htmlWebpackPlugin.options.footer) { %>
-  <footer>
-    <a class="logo" href="index.html" title="homepage">
-      <img inline src="./src/images/logos/AOD_Circles.svg">
-    </a>
-    <ul class="links">
-      <li><a href="../contact/index.html">Contact</a></li>
-      <li><a href="https://attendanceondemand.bamboohr.com/jobs/" target="_blank">Careers</a></li>
-      <li><a href="../privacy-policy.html">Privacy Policy</a></li>
-      <li><a href="../copyright.html">Copyright Notice</a></li>
-    </ul>
-    <ul class="foot">
-      <li id="companyCopyright"></li>
-      <li id="companyAddress"></li>
-      <li id="companyPhone"></li>
-    </ul>
-  </footer>
-<% } %>
+      <!-- / -->
+
+      <script src="https://attendanceondemand.zendesk.com/auth/v2/host.js" data-brand-id="360000697171" data-return-to="https://attendanceondemand.zendesk.com/hc/en-us" data-theme="hc" data-locale="1" data-auth-origin="360000697171,false,true"></script>
+
+
+      <script type="text/javascript">
+      /*
+
+        Greetings sourcecode lurker!
+
+        This is for internal Zendesk and legacy usage,
+        we don't support or guarantee any of these values
+        so please don't build stuff on top of them.
+
+      */
+
+      HelpCenter = {};
+      HelpCenter.account = {"subdomain":"attendanceondemand","environment":"production","name":"Attendance on Demand"};
+      HelpCenter.user = {"identifier":"3fc73aa06564049fdf89a6899c36527efd7e0544","email":"paul.mets@attendanceondemand.com","name":"Paul Mets","tags":[],"locale":"en-us","role":"manager","avatar_url":"https://attendanceondemand.zendesk.com/system/photos/3600/5045/4992/CywGpS4W8AEKdgi.png","organizations":[],"groups":[{"name":"Support","default":true,"isActive":true}]};
+      HelpCenter.internal = {"asset_url":"//static.zdassets.com/hc/assets/","web_widget_asset_composer_url":"https://static.zdassets.com/ekr/snippet.js","current_session":{"locale":"en-us","csrf_token":"XVvk1pWxKgcrhUYCnrw/3EG52vtDn21lSkLdvsyiBq+D9ixpHu+GF7bFPqpJF1zzRymaooqSDMEKLjV4/VWjhQ==","shared_csrf_token":"kEQsdgiPRUVRG++QPtlXy6hIajKcVYr28YlR2Ffd3SD9K6C4UUVkrifV9+jOltos"},"settings":{"article_sanitization_disabled":false,"zopim_enabled":true,"spam_filter_enabled":false},"current_record_id":null,"current_record_url":null,"current_record_title":null,"search_results_count":null,"current_text_direction":"ltr","current_brand_url":"https://attendanceondemand.zendesk.com","current_host_mapping":null,"current_path":null,"authentication_domain":"https://attendanceondemand.zendesk.com","show_autocomplete_breadcrumbs":true,"rollbar_config":{"enabled":true,"endpoint":"https://rollbar-us.zendesk.com/api/1/item/","accessToken":"731a5a953e9a4b7ab6cac9623f50c732","captureUncaught":true,"captureUnhandledRejections":true,"payload":{"environment":"production","client":{"javascript":{"source_map_enabled":true,"code_version":"412830b5fc63203b44f2aa82ba5254c2567cebc3","guess_uncaught_frames":true}}}},"user_info_changing_enabled":false,"has_user_profiles_enabled":true,"has_anonymous_kb_voting":false,"has_professional_upsell":false,"has_multi_language_help_center":false,"mobile_device":false,"mobile_site_enabled":false,"show_at_mentions":false,"has_copied_content":false,"embeddables_config":{"embeddables_web_widget":false,"embeddables_connect_ipms":false},"base_domain":"zendesk.com","answer_bot_subdomain":"static","plans_url":"https://attendanceondemand.zendesk.com/hc/admin/plan?locale=en-us","manage_content_url":"https://attendanceondemand.zendesk.com/hc/en-us","arrange_content_url":"https://attendanceondemand.zendesk.com/hc/admin/arrange_contents?locale=en-us","general_settings_url":"https://attendanceondemand.zendesk.com/hc/admin/general_settings?locale=en-us","user_segments_url":"https://attendanceondemand.zendesk.com/hc/admin/user_segments?locale=en-us","import_articles_url":"https://attendanceondemand.zendesk.com/hc/admin/import_articles?locale=en-us","has_community_enabled":true,"has_groups":true,"has_internal_sections":true,"has_organizations":true,"has_tag_restrictions":true,"has_answer_bot_enabled_in_classic":false,"has_answer_bot_web_form_enabled":false,"has_close_the_loop_enabled":false,"billing_url":"/access/return_to?return_to=https://attendanceondemand.zendesk.com/agent/admin/subscription","has_answer_bot":true,"has_guide_docs_importer":true,"has_guide_permission_groups":false,"answer_bot_management_url":"https://attendanceondemand.zendesk.com/hc/admin/answer_bot?locale=en-us","is_account_owner":false,"has_theming_templates":true,"theming_center_url":"https://attendanceondemand.zendesk.com/theming","theming_cookie_key":"hc-3fc73aa06564049fdf89a6899c36527efd7e0544-preview","is_preview":true,"permission_groups_url":"https://attendanceondemand.zendesk.com/knowledge/permissions?brand_id=360000697171","has_guide_user_segments_search":false};
+    </script>
+
+      <!-- <script src="//static.zdassets.com/hc/assets/hc_enduser-af9a943ad6d782cc7f256a3fbb1eb97e.js"></script> -->
+
+
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   <% if (htmlWebpackPlugin.options.window) { %>
     <script type="text/javascript"><%

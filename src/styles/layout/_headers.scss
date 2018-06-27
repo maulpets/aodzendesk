@@ -1,0 +1,33 @@
+.header-fixed{
+  z-index: 1000;
+  position: fixed;
+  top:0;
+  left: 0;
+  right: 0;
+
+
+}
+
+
+.header-category{
+  z-index: 1000;
+  position: fixed;
+  top:0;
+  left: 0;
+  right: 0;
+  visibility: visible;
+  @include translateY(0%);
+  @include eZe(all, 200ms);
+
+  &.hidden {
+    @include translateY(-100%);
+    position: absolute;
+    visibility: hidden;
+  }
+
+}
+
+
+main[role="main"]{
+  margin-top: 64px;
+}

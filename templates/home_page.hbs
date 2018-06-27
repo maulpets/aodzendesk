@@ -1,0 +1,65 @@
+<section class="section hero">
+  <div class="hero-inner">
+    {{search submit=false instant=true class='search search-full'}}
+  </div>
+</section>
+
+<div class="container">
+  <section class="section knowledge-base">
+    
+    
+    <section>
+      <div class="row">
+        {{#each categories}}
+        <div class="col s12 m6">
+          <div class="card">
+            <div class="card-content">
+              <span class="card-title">{{name}}</span>
+              <p>{{excerpt description}}</p>
+            </div>
+            <div class="card-action">
+              <a href="{{url}}">Explore</a>
+
+            </div>
+          </div>
+        </div>
+    {{/each}}
+    </div>
+    {{pagination}}
+    </section>
+
+    
+    
+    
+    
+    {{#if promoted_articles}}
+      <section class="articles">
+        <h3>{{t 'promoted_articles'}}</h3>
+        <ul class="article-list promoted-articles">
+          {{#each promoted_articles}}
+            <li class="promoted-articles-item">
+              <a href="{{url}}">
+                {{title}}
+              </a>
+            </li>
+          {{/each}}
+        </ul>
+      </section>
+    {{/if}}
+  </section>
+
+  {{#if help_center.community_enabled}}
+    <section class="section community">
+      <h2>{{t 'community'}}</h2>
+      {{#link 'community' class='community-link'}}
+        {{t 'join_conversation'}}
+      {{/link}}
+
+      <div class="community-image"></div>
+    </section>
+  {{/if}}
+
+  <section class="section activity">
+    {{recent_activity}}
+  </section>
+</div>
