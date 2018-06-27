@@ -44,8 +44,8 @@ import includeHTML from './scripts/custom/includeHTML.js';
 
 window.onload = function(){
 
-  var query = document.getElementById("query");
-  var searchBar = document.getElementById("top-search-bar");
+  const query = document.getElementById("query");
+  const searchBar = document.getElementById("top-search-bar");
     query.addEventListener("focus", function( event ) {
       searchBar.classList.add('searching');
     }, true);
