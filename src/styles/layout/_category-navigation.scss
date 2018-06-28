@@ -1,0 +1,41 @@
+.category-navigation-wrapper{
+  width: 100%;
+  background-color: $aodPurple;
+  height: 50vh;
+  position: relative;
+
+  .navigation-links-wrapper{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    .navigation-links{
+      display: flex;
+      width: 100%;
+      justify-content: space-around;
+      max-width: 1024px;
+      margin: auto;
+      .link-hover{
+        border-radius: 2px 2px 0px 0px;
+        background-color: rgba(255,255,255,.0 );
+        text-align: center;
+        @include eZe(background-color, 200ms);
+        &:hover{
+          background-color: rgba(255,255,255,1);
+        }
+        .link{
+          padding: 1em 5em;
+          display: block;
+          z-index: 10000;
+        }
+      }
+    }
+  }
+  .dropdown-content{
+    // top: -3.5em;
+  }
+
+
+
+}

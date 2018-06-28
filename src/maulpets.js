@@ -41,8 +41,78 @@ import includeHTML from './scripts/custom/includeHTML.js';
 // *********************************//
 
 
+// function init(){
+//   var options = {
+//     "hover": true,
+//     "coverTrigger": false
+//   }
+//
+//   document.addEventListener('DOMContentLoaded', function() {
+//    var elems = document.querySelectorAll('.dropdown-trigger1');
+//    var instances = M.Dropdown.init(elems, options);
+//    console.log("fired");
+//   });
+//
+//   document.addEventListener('DOMContentLoaded', function() {
+//    var elems = document.querySelectorAll('.dropdown-trigger2');
+//    var instances = M.Dropdown.init(elems, options);
+//   });
+//
+//   document.addEventListener('DOMContentLoaded', function() {
+//    var elems = document.querySelectorAll('.dropdown-trigger3');
+//    var instances = M.Dropdown.init(elems, options);
+//   });
+//
+//   document.addEventListener('DOMContentLoaded', function() {
+//    var elems = document.querySelectorAll('.dropdown-trigger4');
+//    var instances = M.Dropdown.init(elems, options);
+//   });
+//
+//   document.addEventListener('DOMContentLoaded', function() {
+//    var elems = document.querySelectorAll('.dropdown-trigger5');
+//    var instances = M.Dropdown.init(elems, options);
+//   });
+//
+// }
+function fuckPaul(){
+  var options = {
+    "hover": true,
+    "coverTrigger": false
+  }
+
+  // document.addEventListener('DOMContentLoaded', function() {
+   var elems = document.querySelectorAll('.dropdown-trigger1');
+   var instances = M.Dropdown.init(elems, options);
+   console.log("fired")
+  // });
+
+  // document.addEventListener('DOMContentLoaded', function() {
+   var elems = document.querySelectorAll('.dropdown-trigger2');
+   var instances = M.Dropdown.init(elems, options);
+  // });
+
+  // document.addEventListener('DOMContentLoaded', function() {
+   var elems = document.querySelectorAll('.dropdown-trigger3');
+   var instances = M.Dropdown.init(elems, options);
+  // });
+
+  // document.addEventListener('DOMContentLoaded', function() {
+   var elems = document.querySelectorAll('.dropdown-trigger4');
+   var instances = M.Dropdown.init(elems, options);
+  // });
+
+  // document.addEventListener('DOMContentLoaded', function() {
+   var elems = document.querySelectorAll('.dropdown-trigger5');
+   var instances = M.Dropdown.init(elems, options);
+  // });
+}
+
+
+
 
 window.onload = function(){
+
+  includeHTML(fuckPaul)
 
   const query = document.getElementById("query");
   const searchBar = document.getElementById("top-search-bar");
@@ -51,7 +121,7 @@ window.onload = function(){
     }, true);
 
     query.addEventListener("blur", function( event ) {
-      searchBar.classList.remove('searching');S
+      searchBar.classList.remove('searching');
     }, true);
 
 

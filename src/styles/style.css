@@ -8724,3 +8724,45 @@ input[type=range].focused:focus:not(.active)::-ms-thumb {
 main[role="main"] {
   margin-top: 64px;
 }
+
+.category-navigation-wrapper {
+  width: 100%;
+  background-color: #794a6b;
+  height: 50vh;
+  position: relative;
+}
+
+.category-navigation-wrapper .navigation-links-wrapper {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.category-navigation-wrapper .navigation-links-wrapper .navigation-links {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  max-width: 1024px;
+  margin: auto;
+}
+
+.category-navigation-wrapper .navigation-links-wrapper .navigation-links .link-hover {
+  border-radius: 2px 2px 0px 0px;
+  background-color: rgba(255, 255, 255, 0);
+  text-align: center;
+  -webkit-transition: background-color ease-in-out 200ms;
+  -moz-transition: background-color ease-in-out 200ms;
+  -o-transition: background-color ease-in-out 200ms;
+  transition: background-color ease-in-out 200ms;
+}
+
+.category-navigation-wrapper .navigation-links-wrapper .navigation-links .link-hover:hover {
+  background-color: white;
+}
+
+.category-navigation-wrapper .navigation-links-wrapper .navigation-links .link-hover .link {
+  padding: 1em 5em;
+  display: block;
+  z-index: 10000;
+}
