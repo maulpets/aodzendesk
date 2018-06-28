@@ -1,8 +1,16 @@
+<section class="section hero">
+  <div class="hero-inner">
+    {{#is category.name 'Channel Partner Conference'}}
+    <div include-html="{{asset 'cpc-nav.html'}}" class="html-container">
+    </div>
+    {{/is}}
+  </div>
+</section>
+
 <div class="container-divider"></div>
 <div class="container">
   <nav class="sub-nav">
     {{breadcrumbs}}
-    {{search submit=false}}
   </nav>
 
   <div class="category-container">

@@ -23,7 +23,7 @@ htmlWebpackPlugin.options.scripts = htmlWebpackPlugin.options.scripts || []
     } %><%
 
     %>
-    <title><%= htmlWebpackPlugin.options.title %></title><%
+    <title>zendesk</title><%
 
     if (htmlWebpackPlugin.files.favicon) { %>
     <link href="<%= htmlWebpackPlugin.files.favicon %>" rel="shortcut icon" /><%
@@ -113,14 +113,17 @@ htmlWebpackPlugin.options.scripts = htmlWebpackPlugin.options.scripts || []
 
 
       <main role="main">
-        <section class="category-navigation-wrapper">
+
+    <section class="section hero">
+      <div class="hero-inner">
+        <div class="category-navigation-wrapper">
           <div class="navigation-links-wrapper">
             <ul class="navigation-links">
-              <li class="link-hover"><a class='dropdown-trigger1 link' href='#' data-target='dropdown1'>2018</a></li>
-              <li class="link-hover"><a class='dropdown-trigger2 link' href='#' data-target='dropdown2'>2017</a></li>
-              <li class="link-hover"><a class='dropdown-trigger3 link' href='#' data-target='dropdown3'>2016</a></li>
-              <li class="link-hover"><a class='dropdown-trigger4 link' href='#' data-target='dropdown4'>2015</a></li>
-              <li class="link-hover"><a class='dropdown-trigger5 link' href='#' data-target='dropdown5'>2014</a></li>
+              <li class="link-hover"><a class='dropdown-trigger link' href='#' data-target='dropdown1'>2018</a></li>
+              <li class="link-hover"><a class='dropdown-trigger link' href='#' data-target='dropdown2'>2017</a></li>
+              <li class="link-hover"><a class='dropdown-trigger link' href='#' data-target='dropdown3'>2016</a></li>
+              <li class="link-hover"><a class='dropdown-trigger link' href='#' data-target='dropdown4'>2015</a></li>
+              <li class="link-hover"><a class='dropdown-trigger link' href='#' data-target='dropdown5'>2014</a></li>
             </ul>
           </div>
 
@@ -165,17 +168,9 @@ htmlWebpackPlugin.options.scripts = htmlWebpackPlugin.options.scripts || []
             <li><a href="#!"><i class="material-icons">view_module</i>four</a></li>
             <li><a href="#!"><i class="material-icons">cloud</i>five</a></li>
           </ul>
-
-
-
-        </section>
-
-
-        <section class="section hero">
-          <div class="hero-inner">
-            <!--     <form role="search" class="search search-full" data-search="" data-instant="true" autocomplete="off" action="/hc/en-us/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" /><input type="search" name="query" id="query" placeholder="Search" autocomplete="off" aria-label="Search" /></form> -->
-          </div>
-        </section>
+        </div>
+      </div>
+    </section>
 
         <div class="container">
           <section class="section knowledge-base">

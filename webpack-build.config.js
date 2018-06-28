@@ -8,7 +8,7 @@ const HtmlWebpackInlineSVGPlugin = require('html-webpack-inline-svg-plugin');
   // cmd "/c taskkill /im node.exe /F"
 
 module.exports = {
-  entry: ['./src/maulpets.js'],
+  entry: ['babel-polyfill','./src/index.js'],
   module: {
     rules: [
       {
