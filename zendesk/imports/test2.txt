@@ -1,0 +1,7 @@
+{
+"article": {
+      "title":"Uploaded via cURL cli - test3 -linux_ubuntu subsystem",
+      "body":"$ curl <h1 id='test'>https://attendanceondemand.zendesk.com/api/v2/help_center/sections/360001209092/articles.json</h1> -d @test.txt ^ -H Content-Type: application/json ^ -v -u paul.mets@attendanceondemand.com:{password}",
+      "locale":"en-us"
+  }
+}
